@@ -1,5 +1,6 @@
 package NhapXuat;
 import java.util.Scanner;
+
 public class NhapXuat {
 	public static void main(String[] args) {
 		//Khai báo các biến
@@ -10,7 +11,7 @@ public class NhapXuat {
 		System.out.print("a=");
 		//Nhap du lieu cho bien a tu ban phim
 		a = banPhim.nextInt();
-		//Nhap du lieu cho b
+		//Nhap du lieu cho b 
 		System.out.print("b=");
 		//Nhap du lieu cho bien b tu ban phim
 		b = banPhim.nextInt();
