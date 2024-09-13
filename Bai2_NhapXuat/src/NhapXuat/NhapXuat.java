@@ -17,7 +17,7 @@ public class NhapXuat {
 		//tong
 		tong = a + b;
 		//in tong ra 
-		System.out.print("tong = " + tong);
+		System.out.print("tong = " + tong); 
 		
 		
 	}
