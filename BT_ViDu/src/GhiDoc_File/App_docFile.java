@@ -14,7 +14,7 @@ public class App_docFile {
 				byteRead = fin.read();
 				if(byteRead == -1) break;
 				System.out.println(byteRead);
-				System.out.println(" ");
+//				System.out.println(" ");
 			}
 			System.out.println("Done!!");
 
