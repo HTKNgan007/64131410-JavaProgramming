@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class TuDien {
-	public static void main() {
+	public static void main(String[] args) {
 		HashMap<String, String>  tudien = new HashMap<String, String>();
 		tudien.put("hello", "Xin chào");
 		tudien.put("apple", "quả táo");
@@ -22,7 +22,6 @@ public class TuDien {
         } else {
             System.out.println("khong ton tai");
         }
-
         scanner.close();
 	}
 }
