@@ -13,5 +13,7 @@ public class App_DocFile {
 		for(int i = 0; i<10; i++) {
 			System.out.print(buff[i]);
 		}
+		System.out.println("");
+		System.out.println(String.valueOf(buff));
 	}
 }
