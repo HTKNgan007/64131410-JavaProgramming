@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<GridPane fx:id="gridPane" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.carofx.HelloController"
+          alignment="CENTER" hgap="10" vgap="10">
+    <!-- Các nút cho trò chơi caro -->
+    <Button fx:id="btn1" GridPane.rowIndex="0" GridPane.columnIndex="0" prefHeight="100" prefWidth="100" onAction="#handleButtonAction"/>
+    <Button fx:id="btn2" GridPane.rowIndex="0" GridPane.columnIndex="1" prefHeight="100" prefWidth="100" onAction="#handleButtonAction"/>
+    <Button fx:id="btn3" GridPane.rowIndex="0" GridPane.columnIndex="2" prefHeight="100" prefWidth="100" onAction="#handleButtonAction"/>
+
+    <Button fx:id="btn4" GridPane.rowIndex="1" GridPane.columnIndex="0" prefHeight="100" prefWidth="100" onAction="#handleButtonAction"/>
+    <Button fx:id="btn5" GridPane.rowIndex="1" GridPane.columnIndex="1" prefHeight="100" prefWidth="100" onAction="#handleButtonAction"/>
+    <Button fx:id="btn6" GridPane.rowIndex="1" GridPane.columnIndex="2" prefHeight="100" prefWidth="100" onAction="#handleButtonAction"/>
+
+    <Button fx:id="btn7" GridPane.rowIndex="2" GridPane.columnIndex="0" prefHeight="100" prefWidth="100" onAction="#handleButtonAction"/>
+    <Button fx:id="btn8" GridPane.rowIndex="2" GridPane.columnIndex="1" prefHeight="100" prefWidth="100" onAction="#handleButtonAction"/>
+    <Button fx:id="btn9" GridPane.rowIndex="2" GridPane.columnIndex="2" prefHeight="100" prefWidth="100" onAction="#handleButtonAction"/>
+
+    <!-- Label để hiển thị trạng thái -->
+    <Label fx:id="statusLabel" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="3" alignment="CENTER" text="Player X's Turn" prefHeight="50" prefWidth="300"/>
+
+    <!-- Nút để reset trò chơi -->
+    <Button fx:id="resetButton" text="Reset" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="3" onAction="#resetGame" prefHeight="50" prefWidth="300"/>
+</GridPane>
