@@ -48,6 +48,7 @@ public class BanHangController {
 
   // Tải dữ liệu từ cơ sở dữ liệu
   public void loadDataFromDatabase() {
+    dsSanPhamObservable.clear();
     try {
       Class.forName("com.mysql.jdbc.Driver");
       String strConn = "jdbc:mysql://localhost:3306/demobanhang";
@@ -136,33 +137,5 @@ public class BanHangController {
     alert.showAndWait();
   }
 
-  // Xử lý sự kiện nút "Thêm Sản Phẩm"
-//  public void handleAddProduct() {
-//    try {
-//      Class.forName("com.mysql.jdbc.Driver");
-//      String strConn = "jdbc:mysql://localhost:3306/demobanhang";
-//      Connection conn = DriverManager.getConnection(strConn, "root", "");
-//
-//      // Ví dụ thêm sản phẩm mới vào cơ sở dữ liệu
-//      String sqlInsert = "INSERT INTO SanPham (tenSP, giaSP, moTa) VALUES ('Sản phẩm mới', 10000, 'Mô tả mới')";
-//      Statement lenh = conn.createStatement();
-//      lenh.executeUpdate(sqlInsert);
-//
-//      // Sau khi thêm, tải lại dữ liệu
-//      loadDataFromDatabase();
-//
-//      conn.close();
-//
-//      // Thông báo thành công
-//      Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//      alert.setTitle("Thông báo");
-//      alert.setHeaderText(null);
-//      alert.setContentText("Sản phẩm đã được thêm thành công!");
-//      alert.showAndWait();
-//
-//    } catch (Exception e) {
-//      e.printStackTrace();
-//    }
-//  }
 }
 
