@@ -50,7 +50,7 @@ public class BanHangController {
   public void loadDataFromDatabase() {
     dsSanPhamObservable.clear();
     try {
-      Class.forName("com.mysql.jdbc.Driver");
+//      Class.forName("com.mysql.jdbc.Driver");
       String strConn = "jdbc:mysql://localhost:3306/demobanhang";
       Connection conn = DriverManager.getConnection(strConn, "root", "");
 
