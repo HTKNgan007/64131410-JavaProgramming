@@ -6,6 +6,6 @@ module org.example.demobanhang {
   requires org.kordamp.bootstrapfx.core;
   requires java.sql;
 
-  opens org.example.demobanhang to javafx.fxml;
-  exports org.example.demobanhang;
+  opens nganha.demobanhang to javafx.fxml;
+  exports nganha.demobanhang;
 }
