@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="nganha.demobanhang.BanHangController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nganha.demobanhang.BanHangController">
     <TableView fx:id="tableSanPham">
         <columns>
-            <TableColumn text="ID" fx:id="colID"/>
-            <TableColumn text="Tên Sản Phẩm" fx:id="colTenSP"/>
-            <TableColumn text="Giá" fx:id="colGiaSP"/>
-            <TableColumn text="Mô Tả" fx:id="colMoTa"/>
+            <TableColumn fx:id="colID" text="ID" />
+            <TableColumn fx:id="colTenSP" text="Tên Sản Phẩm" />
+            <TableColumn fx:id="colGiaSP" text="Giá" />
+            <TableColumn fx:id="colMoTa" text="Mô Tả" />
         </columns>
     </TableView>
+    <!-- Các trường nhập liệu -->
+    <Label layoutX="321.0" layoutY="43.0" text="Tên Sản Phẩm:" />
+    <TextField fx:id="txtTenSP" layoutX="441.0" layoutY="38.0" />
 
-    <!-- Nút để thêm sản phẩm mới -->
-    <Button text="Thêm Sản Phẩm" onAction="#handleAddProduct"/>
+    <Label layoutX="322.0" layoutY="111.0" text="Giá Sản Phẩm:" />
+    <TextField fx:id="txtGiaSP" layoutX="441.0" layoutY="106.0" />
+
+    <Label layoutX="322.0" layoutY="179.0" text="Mô Tả:" />
+    <TextField fx:id="txtMoTa" layoutX="441.0" layoutY="174.0" />
+
+    <!-- Nút thêm sản phẩm -->
+    <Button layoutX="388.0" layoutY="270.0" onAction="#handleAddProduct" text="Thêm Sản Phẩm" />
 
 </AnchorPane>

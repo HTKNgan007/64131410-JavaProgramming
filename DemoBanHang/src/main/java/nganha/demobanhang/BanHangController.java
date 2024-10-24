@@ -6,12 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class BanHangController {
@@ -25,6 +23,12 @@ public class BanHangController {
   private TableColumn<SanPham, Float> colGiaSP;
   @FXML
   private TableColumn<SanPham, String> colMoTa;
+  @FXML
+  private TextField txtTenSP;
+  @FXML
+  private TextField txtGiaSP;
+  @FXML
+  private TextField txtMoTa;
 
   private ObservableList<SanPham> dsSanPhamObservable;
 
@@ -70,17 +74,39 @@ public class BanHangController {
     }
   }
 
-  // Xử lý sự kiện nút "Thêm Sản Phẩm"
+  // Xử lý sự kiện khi nhấn nút "Thêm Sản Phẩm"
   public void handleAddProduct() {
+    String tenSP = txtTenSP.getText();
+    String giaSPStr = txtGiaSP.getText();
+    String moTa = txtMoTa.getText();
+
+    // Kiểm tra các trường không được để trống
+    if (tenSP.isEmpty() || giaSPStr.isEmpty() || moTa.isEmpty()) {
+      showAlert("Lỗi", "Vui lòng nhập đầy đủ thông tin sản phẩm.");
+      return;
+    }
+
+    // Chuyển đổi giá trị giá sản phẩm từ String sang float
+    float giaSP;
+    try {
+      giaSP = Float.parseFloat(giaSPStr);
+    } catch (NumberFormatException e) {
+      showAlert("Lỗi", "Giá sản phẩm phải là một số.");
+      return;
+    }
+
     try {
       Class.forName("com.mysql.jdbc.Driver");
       String strConn = "jdbc:mysql://localhost:3306/demobanhang";
       Connection conn = DriverManager.getConnection(strConn, "root", "");
 
-      // Ví dụ thêm sản phẩm mới vào cơ sở dữ liệu
-      String sqlInsert = "INSERT INTO SanPham (tenSP, giaSP, moTa) VALUES ('Sản phẩm mới', 10000, 'Mô tả mới')";
-      Statement lenh = conn.createStatement();
-      lenh.executeUpdate(sqlInsert);
+      // Thêm sản phẩm vào cơ sở dữ liệu
+      String sqlInsert = "INSERT INTO SanPham (tenSP, giaSP, moTa) VALUES (?, ?, ?)";
+      PreparedStatement lenh = conn.prepareStatement(sqlInsert);
+      lenh.setString(1, tenSP);
+      lenh.setFloat(2, giaSP);
+      lenh.setString(3, moTa);
+      lenh.executeUpdate();
 
       // Sau khi thêm, tải lại dữ liệu
       loadDataFromDatabase();
@@ -88,15 +114,55 @@ public class BanHangController {
       conn.close();
 
       // Thông báo thành công
-      Alert alert = new Alert(Alert.AlertType.INFORMATION);
-      alert.setTitle("Thông báo");
-      alert.setHeaderText(null);
-      alert.setContentText("Sản phẩm đã được thêm thành công!");
-      alert.showAndWait();
+      showAlert("Thành công", "Sản phẩm đã được thêm thành công!");
+
+      // Xóa các trường nhập liệu sau khi thêm thành công
+      txtTenSP.clear();
+      txtGiaSP.clear();
+      txtMoTa.clear();
 
     } catch (Exception e) {
       e.printStackTrace();
+      showAlert("Lỗi", "Có lỗi xảy ra khi thêm sản phẩm.");
     }
   }
+
+  // Hiển thị cảnh báo
+  private void showAlert(String title, String message) {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle(title);
+    alert.setHeaderText(null);
+    alert.setContentText(message);
+    alert.showAndWait();
+  }
+
+  // Xử lý sự kiện nút "Thêm Sản Phẩm"
+//  public void handleAddProduct() {
+//    try {
+//      Class.forName("com.mysql.jdbc.Driver");
+//      String strConn = "jdbc:mysql://localhost:3306/demobanhang";
+//      Connection conn = DriverManager.getConnection(strConn, "root", "");
+//
+//      // Ví dụ thêm sản phẩm mới vào cơ sở dữ liệu
+//      String sqlInsert = "INSERT INTO SanPham (tenSP, giaSP, moTa) VALUES ('Sản phẩm mới', 10000, 'Mô tả mới')";
+//      Statement lenh = conn.createStatement();
+//      lenh.executeUpdate(sqlInsert);
+//
+//      // Sau khi thêm, tải lại dữ liệu
+//      loadDataFromDatabase();
+//
+//      conn.close();
+//
+//      // Thông báo thành công
+//      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//      alert.setTitle("Thông báo");
+//      alert.setHeaderText(null);
+//      alert.setContentText("Sản phẩm đã được thêm thành công!");
+//      alert.showAndWait();
+//
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
+//  }
 }
 
