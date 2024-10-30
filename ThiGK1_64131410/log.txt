@@ -1,0 +1,10 @@
+Byte to Bit: 3 Byte = 24 Bit
+BMI: BMI: 27,34 (Thừa cân)
+BMI: BMI: 15,43 (Thiếu cân)
+Byte to Bit: 5 Byte = 40 Bit
+Byte to Bit: 3 Byte = 24 Bit
+BMI: BMI: 30,86 (Béo phì)
+BMI: BMI: 21,60 (Bình thường)
+BMI: BMI: 24,22 (Bình thường)
+Byte to Bit: 2 Byte = 16 Bit
+Byte to Bit: 1 Byte = 8 Bit
