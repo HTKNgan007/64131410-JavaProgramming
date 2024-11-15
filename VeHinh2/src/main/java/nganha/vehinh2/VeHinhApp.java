@@ -79,25 +79,25 @@ public class VeHinhApp extends Application {
     nose.setStrokeWidth(3);
 
     // Vẽ các đường cong trong chân
-    Arc leftLegArc1 = new Arc(95, 288, 17, 17, 90, 120);
+    Arc leftLegArc1 = new Arc(105, 297, 10, 10, 90, 120);
     leftLegArc1.setFill(null);
     leftLegArc1.setStroke(Color.RED);
     leftLegArc1.setStrokeWidth(3);
     leftLegArc1.setType(ArcType.OPEN);
 
-    Arc leftLegArc2 = new Arc(98, 290, 17, 17, -80, 120);
+    Arc leftLegArc2 = new Arc(107, 297, 10, 10, -80, 120);
     leftLegArc2.setFill(null);
     leftLegArc2.setStroke(Color.RED);
     leftLegArc2.setStrokeWidth(3);
     leftLegArc2.setType(ArcType.OPEN);
 
-    Arc rightLegArc1 = new Arc(190, 292, 17, 17, 120, 120);
+    Arc rightLegArc1 = new Arc(197, 297, 10, 10, 120, 120);
     rightLegArc1.setFill(null);
     rightLegArc1.setStroke(Color.RED);
     rightLegArc1.setStrokeWidth(3);
     rightLegArc1.setType(ArcType.OPEN);
 
-    Arc rightLegArc2 = new Arc(195, 292, 17, 17, -45, 120);
+    Arc rightLegArc2 = new Arc(199, 297, 10, 10, -45, 120);
     rightLegArc2.setFill(null);
     rightLegArc2.setStroke(Color.RED);
     rightLegArc2.setStrokeWidth(3);
