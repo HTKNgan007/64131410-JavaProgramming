@@ -3,6 +3,7 @@ package nganha.SimpleShape;
 import javax.swing.*;
 import java.awt.*;
 
+//Vẽ hình bằng Swing GUI
 public class SimpleDrawing extends JPanel {
   @Override
   protected void paintComponent(Graphics g) {
