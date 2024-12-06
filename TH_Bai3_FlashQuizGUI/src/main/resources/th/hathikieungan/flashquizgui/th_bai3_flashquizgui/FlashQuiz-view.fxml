@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.hathikieungan.flashquizgui.th_bai3_flashquizgui.FlashQuizController">
+   <children>
+      <HBox prefHeight="768.0" prefWidth="1024.0">
+         <children>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="768.0" prefWidth="354.0" style="-fx-background-color: #88aa66;">
+               <children>
+                  <AnchorPane prefHeight="270.0" prefWidth="522.0" style="-fx-background-color: #88aa66;">
+                     <children>
+                        <Text layoutX="-14.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FLASH QZ" textAlignment="CENTER" wrappingWidth="445.46694749511005">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="buttonCau10" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #ddaa66;" text="Câu 10">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="buttonCau9" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #ddaa66;" text="Câu 9">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="buttonCau8" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #ddaa66;" text="Câu 8">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="buttonCau7" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #ddaa66;" text="Câu 7">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="buttonCau6" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #ddaa66;" text="Câu 6">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="buttonCau5" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #ddaa66;" text="Câu 5">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="buttonCau4" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #ddaa66;" text="Câu 4">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="buttonCau3" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #ddaa66;" text="Câu 3">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="buttonCau2" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #ddaa66;" text="Câu 2">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="buttonCau1" mnemonicParsing="false" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #ddaa66;" text="Câu 1">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="768.0" prefWidth="759.0" style="-fx-background-color: #3333FF;">
+               <children>
+                  <AnchorPane prefHeight="524.0" prefWidth="1386.0" style="-fx-border-color: #FFFFFF;">
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                     <children>
+                        <Text layoutX="11.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lời hỏi Câu 1 ở đây" textAlignment="CENTER" wrappingWidth="860.5941162109375">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <GridPane prefHeight="524.0" prefWidth="1369.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="708.688720703125" minWidth="10.0" prefWidth="189.029541015625" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1117.8843994140625" minWidth="10.0" prefWidth="595.470458984375" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1103.5068969726562" minWidth="10.0" prefWidth="281.755126953125" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button fx:id="buttonA" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-radius: 100; -fx-background-color: #0097a7;" text="A">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="buttonB" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-radius: 100; -fx-background-color: #0097a7;" text="B" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="buttonD" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-radius: 100; -fx-background-color: #0097a7;" text="D" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="buttonC" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" style="-fx-background-radius: 100; -fx-background-color: #0097a7;" text="C" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="buttonPhuongAnA" mnemonicParsing="false" prefHeight="117.0" prefWidth="916.0" style="-fx-background-color: #0097a7;" text="Phương án A" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="buttonPhuongAnB" mnemonicParsing="false" prefHeight="117.0" prefWidth="922.0" style="-fx-background-color: #0097a7;" text="Phương án B" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="buttonPhuongAnC" mnemonicParsing="false" prefHeight="117.0" prefWidth="922.0" style="-fx-background-color: #0097a7;" text="Phương án C" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="buttonPhuongAnD" mnemonicParsing="false" prefHeight="117.0" prefWidth="922.0" style="-fx-background-color: #0097a7;" text="Phương án D" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <TextArea prefHeight="48.0" prefWidth="118.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </GridPane.margin>
+                        </TextArea>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Điểm" textAlignment="CENTER" wrappingWidth="219.7476806640625" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets top="40.0" />
+                           </GridPane.margin>
+                        </Text>
+                     </children>
+                  </GridPane>
+               </children></VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
