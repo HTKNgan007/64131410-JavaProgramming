@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.hathikieungan.bmi.th_bai2_bmi.BMIController">
+    <VBox alignment="CENTER" prefHeight="550.0" prefWidth="375.0" spacing="15" style="-fx-background-color: #ffffff; -fx-padding: 20px; -fx-font-size: 14px;">
+
+        <Text style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #00796b; text-alignment: center;" text="Tính chỉ số BMI" wrappingWidth="199.83966064453125">
+        <VBox.margin>
+            <Insets bottom="30.0" />
+         </VBox.margin></Text>
+
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 10px;">
+            <Text style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #00796b;" text="Cân nặng(kg):" textAlignment="CENTER" wrappingWidth="95.0" />
+            <TextField fx:id="txtWeight" promptText="Nhập cân nặng (kg)" style="-fx-font-size: 14px; -fx-background-color: #e0f7fa; -fx-border-radius: 5px; -fx-padding: 5px;" />
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 10px;">
+            <Text style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #00796b;" text="Chiều cao(m):" textAlignment="CENTER" wrappingWidth="95.0" />
+            <TextField fx:id="txtHeight" promptText="Nhập chiều cao (m)" style="-fx-font-size: 14px; -fx-background-color: #e0f7fa; -fx-border-radius: 5px; -fx-padding: 5px;" />
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 10px;">
+            <CheckBox fx:id="chkAsian" style="-fx-font-size: 14px; -fx-text-fill: #1E90FF;" text="Người châu Á" />
+        </HBox>
+
+        <Label fx:id="lblResult" style="-fx-font-size: 16px; -fx-text-fill: #1E90FF; font-weight: bold; text-alignment: center;" text="Kết quả" wrapText="true" />
+
+        <Button id="btnResult" onAction="#calculateBMI" style="-fx-font-size: 14px; -fx-background-color: #1E90FF; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 20px; -fx-border-radius: 5px;" text="Kiểm tra BMI" />
+    </VBox>
+</StackPane>
