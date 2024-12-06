@@ -8,124 +8,129 @@ import javafx.event.ActionEvent;
 public class FlashQuizController {
   // Các nút câu hỏi
   @FXML
-  private Button buttonCau1;
-  @FXML
-  private Button buttonCau2;
-  @FXML
-  private Button buttonCau3;
-  @FXML
-  private Button buttonCau4;
-  @FXML
-  private Button buttonCau5;
-  @FXML
-  private Button buttonCau6;
-  @FXML
-  private Button buttonCau7;
-  @FXML
-  private Button buttonCau8;
-  @FXML
-  private Button buttonCau9;
-  @FXML
-  private Button buttonCau10;
+  private Button buttonCau1, buttonCau2, buttonCau3, buttonCau4, buttonCau5,
+      buttonCau6, buttonCau7, buttonCau8, buttonCau9, buttonCau10;
 
   // Các nút câu trả lời
   @FXML
-  private Button buttonA;
-  @FXML
-  private Button buttonB;
-  @FXML
-  private Button buttonC;
-  @FXML
-  private Button buttonD;
+  private Button buttonA, buttonB, buttonC, buttonD;
 
+  // Các nút phương án
   @FXML
-  private Button buttonPhuongAnA;
-  @FXML
-  private Button buttonPhuongAnB;
-  @FXML
-  private Button buttonPhuongAnC;
-  @FXML
-  private Button buttonPhuongAnD;
+  private Button buttonPhuongAnA, buttonPhuongAnB, buttonPhuongAnC, buttonPhuongAnD;
 
-  // Nút câu hỏi được chọn
+  // Nút đang được chọn
   private Button selectedQuestionButton = null;
   private Button selectedAnswerButton = null;
+  private Button selectedOptionButton = null;
 
-  // Xử lý sự kiện khi người dùng nhấn vào câu hỏi
+  // Màu sắc mặc định
+  private final String DEFAULT_COLOR = "#0097a7";
+  private final String SELECTED_COLOR = "#4CAF50";
+  private final String QUESTION_SELECTED_COLOR = "#ff0000"; // Màu đỏ cho câu hỏi được chọn
+
+  // Xử lý sự kiện khi chọn nút câu hỏi
   @FXML
   private void handleQuestionClick(ActionEvent event) {
     Button clickedButton = (Button) event.getSource();
 
-    // Nếu đã chọn câu hỏi, đổi lại màu ban đầu
+    // Đổi màu nút trước đó về mặc định
     if (selectedQuestionButton != null) {
-      selectedQuestionButton.setStyle("-fx-background-color: #ddaa66; -fx-font-size: 18px;");
+      selectedQuestionButton.setStyle("-fx-background-color: #ddaa66;");
     }
 
-    // Thay đổi màu cho câu hỏi được chọn
-    clickedButton.setStyle("-fx-background-color: #ff0000; -fx-font-size: 18px;");
+    // Đổi màu nút hiện tại
+    clickedButton.setStyle("-fx-background-color: " + QUESTION_SELECTED_COLOR + ";");
     selectedQuestionButton = clickedButton;
   }
 
-  // Xử lý sự kiện khi người dùng chọn phương án trả lời
+  // Xử lý khi nhấn vào nút câu trả lời (A, B, C, D)
   @FXML
   private void handleAnswerClick(ActionEvent event) {
     Button clickedButton = (Button) event.getSource();
 
-    // Nếu đã chọn câu trả lời, đổi lại màu ban đầu
+    // Reset màu cho nút trả lời trước đó và nút phương án trước đó
     if (selectedAnswerButton != null) {
-      selectedAnswerButton.setStyle("-fx-background-color: #0097a7; -fx-font-size: 40px;");
+      resetButtonColor(selectedAnswerButton, selectedOptionButton);
     }
 
-    // Thay đổi màu cho phương án trả lời được chọn
-    clickedButton.setStyle("-fx-background-color: #4CAF50; -fx-font-size: 40px;");
-    selectedAnswerButton = clickedButton;
-
-    // Kiểm tra xem nút nào được nhấn và gọi hành động tương ứng cho buttonPhuongAn
+    // Liên kết nút trả lời và nút phương án
     if (clickedButton == buttonA) {
-      // Kích hoạt buttonPhuongAnA
-      buttonPhuongAnA.setStyle("-fx-background-color: #4CAF50; -fx-font-size: 40px;");
-      selectedAnswerButton = buttonPhuongAnA; // Gán buttonPhuongAnA là nút được chọn
+      updateButtonColors(buttonA, buttonPhuongAnA);
     } else if (clickedButton == buttonB) {
-      // Kích hoạt buttonPhuongAnB
-      buttonPhuongAnB.setStyle("-fx-background-color: #4CAF50; -fx-font-size: 40px;");
-      selectedAnswerButton = buttonPhuongAnB;
+      updateButtonColors(buttonB, buttonPhuongAnB);
     } else if (clickedButton == buttonC) {
-      // Kích hoạt buttonPhuongAnC
-      buttonPhuongAnC.setStyle("-fx-background-color: #4CAF50; -fx-font-size: 40px;");
-      selectedAnswerButton = buttonPhuongAnC;
+      updateButtonColors(buttonC, buttonPhuongAnC);
     } else if (clickedButton == buttonD) {
-      // Kích hoạt buttonPhuongAnD
-      buttonPhuongAnD.setStyle("-fx-background-color: #4CAF50; -fx-font-size: 40px;");
-      selectedAnswerButton = buttonPhuongAnD;
+      updateButtonColors(buttonD, buttonPhuongAnD);
     }
   }
 
+  // Xử lý khi nhấn vào nút phương án (Phương án A, B, C, D)
+  @FXML
+  private void handleOptionClick(ActionEvent event) {
+    Button clickedButton = (Button) event.getSource();
 
-  // Sự kiện khi người dùng chọn câu hỏi
+    // Reset màu cho nút trả lời trước đó và nút phương án trước đó
+    if (selectedOptionButton != null) {
+      resetButtonColor(selectedAnswerButton, selectedOptionButton);
+    }
+
+    // Liên kết nút phương án và nút trả lời
+    if (clickedButton == buttonPhuongAnA) {
+      updateButtonColors(buttonA, buttonPhuongAnA);
+    } else if (clickedButton == buttonPhuongAnB) {
+      updateButtonColors(buttonB, buttonPhuongAnB);
+    } else if (clickedButton == buttonPhuongAnC) {
+      updateButtonColors(buttonC, buttonPhuongAnC);
+    } else if (clickedButton == buttonPhuongAnD) {
+      updateButtonColors(buttonD, buttonPhuongAnD);
+    }
+  }
+
+  // Cập nhật màu sắc cho nút trả lời và nút phương án
+  private void updateButtonColors(Button answerButton, Button optionButton) {
+    answerButton.setStyle("-fx-background-color: " + SELECTED_COLOR + ";");
+    optionButton.setStyle("-fx-background-color: " + SELECTED_COLOR + ";");
+
+    // Lưu lại trạng thái nút được chọn
+    selectedAnswerButton = answerButton;
+    selectedOptionButton = optionButton;
+  }
+
+  // Reset màu sắc về mặc định
+  private void resetButtonColor(Button answerButton, Button optionButton) {
+    if (answerButton != null) {
+      answerButton.setStyle("-fx-background-color: " + DEFAULT_COLOR + ";");
+    }
+    if (optionButton != null) {
+      optionButton.setStyle("-fx-background-color: " + DEFAULT_COLOR + ";");
+    }
+  }
+
+  // Khởi tạo
   public void initialize() {
-    // Gán sự kiện cho các câu hỏi
-    buttonCau1.setOnAction(this::handleQuestionClick);
-    buttonCau2.setOnAction(this::handleQuestionClick);
-    buttonCau3.setOnAction(this::handleQuestionClick);
-    buttonCau4.setOnAction(this::handleQuestionClick);
-    buttonCau5.setOnAction(this::handleQuestionClick);
-    buttonCau6.setOnAction(this::handleQuestionClick);
-    buttonCau7.setOnAction(this::handleQuestionClick);
-    buttonCau8.setOnAction(this::handleQuestionClick);
-    buttonCau9.setOnAction(this::handleQuestionClick);
-    buttonCau10.setOnAction(this::handleQuestionClick);
+    // Gán sự kiện cho các nút câu hỏi
+    Button[] questionButtons = {buttonCau1, buttonCau2, buttonCau3, buttonCau4, buttonCau5,
+        buttonCau6, buttonCau7, buttonCau8, buttonCau9, buttonCau10};
 
-    // Gán sự kiện cho các phương án trả lời
-    buttonA.setOnAction(this::handleAnswerClick);
-    buttonB.setOnAction(this::handleAnswerClick);
-    buttonC.setOnAction(this::handleAnswerClick);
-    buttonD.setOnAction(this::handleAnswerClick);
+    for (Button questionButton : questionButtons) {
+      questionButton.setOnAction(this::handleQuestionClick);
+      questionButton.setStyle("-fx-background-color: #ddaa66;");
+    }
 
-    //
-    buttonPhuongAnA.setOnAction(this::handleAnswerClick);
-    buttonPhuongAnB.setOnAction(this::handleAnswerClick);
-    buttonPhuongAnC.setOnAction(this::handleAnswerClick);
-    buttonPhuongAnD.setOnAction(this::handleAnswerClick);
+    // Gán sự kiện cho các nút trả lời
+    Button[] answerButtons = {buttonA, buttonB, buttonC, buttonD};
+    for (Button answerButton : answerButtons) {
+      answerButton.setOnAction(this::handleAnswerClick);
+      answerButton.setStyle("-fx-background-color: " + DEFAULT_COLOR + ";");
+    }
 
+    // Gán sự kiện cho các nút phương án
+    Button[] optionButtons = {buttonPhuongAnA, buttonPhuongAnB, buttonPhuongAnC, buttonPhuongAnD};
+    for (Button optionButton : optionButtons) {
+      optionButton.setOnAction(this::handleOptionClick);
+      optionButton.setStyle("-fx-background-color: " + DEFAULT_COLOR + ";");
+    }
   }
 }
